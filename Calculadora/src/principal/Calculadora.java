@@ -1,5 +1,11 @@
 package principal;
 import menu.Menu;
+
+/**Calculadora
+ * 
+ * @author Julen Urlezaga
+ * @version 1.0
+ */
 import operaciones.Operaciones;
 
 public class Calculadora{
@@ -14,25 +20,38 @@ public class Calculadora{
         do{
             operandos = menu.pedirNumeros();
             operacion = menu.menuOpciones();
+            try {
             
-            if (operacion.equalsIgnoreCase("+")){
+            	if (operacion.equalsIgnoreCase("+")){
                 resultado = operaciones.sumar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-            } else if (operacion.equalsIgnoreCase("-")){
+           
+            	} else if (operacion.equalsIgnoreCase("-")){
                 resultado = operaciones.restar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-            } else if (operacion.equalsIgnoreCase("*")){
+           
+            	} else if (operacion.equalsIgnoreCase("*")){
                 resultado = operaciones.multiplicar(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-            } else if (operacion.equalsIgnoreCase("/")){
+            
+            	} else if (operacion.equalsIgnoreCase("/")){
                 resultado = operaciones.dividir(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-            } else if (operacion.equalsIgnoreCase("%")){
+            
+            	} else if (operacion.equalsIgnoreCase("%")){
                 resultado = operaciones.resto(operandos[0], operandos[1]);
                 System.out.println ("Resultado: " + resultado);
-            } else {
-                System.out.println ("Operación no válida");
-            }
+           
+            	} else {
+                System.out.println ("Operacion no valida");
+            
+            	}
+           
+            }catch (ArithmeticException e) {
+            	System.out.println ("Error " + e.getMessage());
+            	System.out.println ("Fin del Programa");
+            	
+			}
         }   while (menu.repetir());
     }
 }
