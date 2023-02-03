@@ -75,6 +75,7 @@ public class Calculadora{
                 try {
                 	resultado = operaciones.dividir(operandos[0], operandos[1]);
                 	System.out.println ("Resultado: " + resultado);
+                	LOGGER.log(Level.FINE, "Division numero 1: " + operandos[0] +", resultado: "+resultado);
                 }catch (ArithmeticException e){
                 	LOGGER.log(Level.WARNING, "Division entre cero", resultado);
                 	System.out.println ("Intentalo de nuevo");

@@ -56,6 +56,7 @@ public class Operaciones{
      * @param valor1 (1.er numero introducido)
      * @param valor2 (2.er numero introducido)
      * @param numero
+     * @throws ArithmeticException
      * @return valor1/valor2=numero
      */
     
